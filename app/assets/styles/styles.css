@@ -1,0 +1,28 @@
+/*This code will import the file "normalize.css" from the "node-modules" folder*/
+@import "normalize.css";
+
+@import "base/_variables";
+
+/*This code will import the file "_large-hero.css" from the "modules" folder*/
+@import "modules/_large-hero";
+
+/*This code will import the file "_global.css" from the "base" folder*/
+@import "base/_global";
+
+
+@import "modules/_btn";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
