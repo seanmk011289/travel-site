@@ -1,6 +1,8 @@
 /*This code will import the file "normalize.css" from the "node-modules" folder*/
 @import "normalize.css";
 
+@import "base/_mixins";
+
 @import "base/_variables";
 
 /*This code will import the file "_large-hero.css" from the "modules" folder*/
@@ -11,6 +13,22 @@
 
 
 @import "modules/_btn";
+
+
+@import "modules/_wrapper";
+
+
+@import "modules/_page-section";
+
+
+@import "modules/_headline";
+
+@import "modules/_row";
+
+@import "modules/_generic-content-container";
+
+
+
 
 
 

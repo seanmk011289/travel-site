@@ -1,9 +1,17 @@
 
 .large-hero {
 	position:relative;
+	border-bottom: 10px solid $mainBlue;
+
+	&__image {
+		display:block;
+	}
+
+	
 	/*This is where we will use "&" to pull in the .large-hero classname into our nesting*/
 
 	&__text-content {
+
 		position:absolute;
 		top:50%;
 		left:0;
@@ -13,29 +21,67 @@
 	}
 
 	&__title {
-		font-weight:700;
+		font-weight:500;
 		color: $mainBlue;
+		/*this used to be the font-size, before we began thinking in mobile first methodology
 		font-size: 4.8rem;
+		Now we need to make it smaller to begin with and then make it this original size later on! */
+		font-size:2.4rem;
 		margin:0;
-		
+		/*Now thinking mobile first, we write a media query right under this!*/
+
+		/* NEW CONCEPT: Mixins.  Instead of this regular media query:
+
+		@media (min-width: 530px) {
+			font-size:4.9rem;
+		}
+
+		WE ARE GOING TO USE Mixins to see if we can simplify this process even more*/
+
+		@mixin atSmall {
+			font-size:4.8rem;
+		}
+
+		/* NOT DELETING THESE SO WE CAN ALWAYS HAVE AN EXAMPLE OF MIXINS
+
+		@mixin atMedium {
+			font-size: 3.2rem;
+		}
+		@mixin atLarge{
+			font-size: 4.8rem;
+		} */
 	}
+
+
 
 	&__subtitle {
 		font-weight:100;
 		color: $mainBlue;
-		font-size: 2.9rem;
+		font-size:1.5rem;
 		margin:0;
-		
+
+		/*more MIXIN practice below!*/
+
+	 @mixin atSmall {
+		font-size: 2.9rem;
+	}		 
+
 	}
+
+
 
 	&__description {
 		color:#fff;
-		font-size:1.875rem;
+		font-size:1.1rem;
 		font-weight:100;
 		text-shadow:2px 2px 0 rgba(0, 0, 0, .1);
 		max-width:30rem;
 		margin-left:auto;
 		margin-right:auto;
+
+		@mixin atSmall {
+			font-size:1.875rem;
+		}
 	}
 
 
@@ -44,7 +90,7 @@
 
 
 
-/*This is how you would write your CSS WITHOUT USING THE & symbol and nesting*/
+/*This is how you would write your CSS WITHOUT USING THE '&' symbol and nesting*/
 /*Above is how you would NEST YOUR CSS using postcss-nested
 
 .large-hero__text-content {

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Responsive Images - Crop</title>
+</head>
+<body>
+
+<!-- If you want to load a differently cropped image for each screen size, set up your image in the html like this -->
+<picture>
+	<!-- Loading up differently cropped images based on screen size with this code -->
+	<source srcset="images/dog-crop-large.jpg" media="(min-width:1200px)">
+	<source srcset="images/dog-crop-medium.jpg" media="(min-width:760px)">
+
+		<img src="images/dog-crop-small.jpg" alt="Puppy in the sand">
+
+</picture>
+
+
+</body>
+</html>

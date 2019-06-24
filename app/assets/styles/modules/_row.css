@@ -1,0 +1,63 @@
+.row {
+
+	/*Below is how you can clear a float without using an empty div in your html! Just create
+	a pseudo element using a BEM modifier!
+
+	&::after {
+		content: "";
+		clear:both;
+		display:table;
+	}
+
+
+Leaving the above for an example, but moving it to a MIXIN would be better for replication
+
+	*/
+
+	@mixin clearFix;
+
+	&--gutters {
+		margin-right: -65px;
+	}
+
+	&--gutters > div {
+		padding-right: 65px;
+		/*Using box-sizing, you can still have width of 100% between 2 elements WITH padding without 
+		breaking a column layout!  If you're confused, comment out the box-sizing styling and bring it back,
+		you'll know what I mean!*/
+		box-sizing: border-box;
+	}
+
+	&__b-margin-until-medium {
+		margin-bottom: 1rem;
+	}
+
+	@mixin atMedium {
+
+	&__b-margin-until-medium {
+		margin-bottom: 0;
+	}
+
+	&__medium-4 {
+		float:left;
+		width:33.33%;
+	}
+
+	&__medium-4-larger {
+		width:37%;
+	}
+
+	&__medium-8 {
+		float:left;
+		width:66.66%;
+	}
+
+	&__medium-8-smaller {
+		width: 63%;
+	}
+
+	}
+
+
+
+}
